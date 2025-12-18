@@ -1,6 +1,6 @@
 import * as mongodb from "mongodb";
 import { getDB } from "../database/index";
-import { IClient, CLIENT_COLLECTION } from "../models/clientModel.ts";
+import { IClient, CLIENT_COLLECTION } from "../models/clientModel";
 import { COMMANDE_COLLECTION } from "../models/commandeModel";
 
 export class ClientService {

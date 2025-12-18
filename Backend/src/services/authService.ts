@@ -3,7 +3,7 @@ import * as bcrypt from "bcryptjs";
 import * as jwt from "jsonwebtoken";
 import { getDB } from "../database/index";
 import { IUser, USER_COLLECTION } from "../models/userModel";
-import { CLIENT_COLLECTION } from "../models/userModel";
+import { CLIENT_COLLECTION } from "../models/clientModel";
 
 export class AuthService {
     private collection() {

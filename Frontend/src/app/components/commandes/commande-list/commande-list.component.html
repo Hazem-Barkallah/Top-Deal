@@ -48,7 +48,7 @@
             </span>
           </td>
           <td>{{ commande.articles.length }} item(s)</td>
-          <td>{{ commande.montantTotal | number : "1.2-2" }} TND</td>
+          <td>{{ commande.montantTotal | number : "1.2-2" }} â‚¬</td>
           <td *ngIf="authService.isAdmin()">
             <div class="actions">
               <button class="btn btn-warning" (click)="openEditModal(commande)">
@@ -114,8 +114,8 @@
             required
           >
             <option value="en cours">En cours</option>
-            <option value="Validï¿½e">Validï¿½e</option>
-            <option value="annulï¿½e">Annulï¿½e</option>
+            <option value="ValidÃe">ValidÃe</option>
+            <option value="annulÃe">AnnulÃe</option>
           </select>
         </div>
       </div>
@@ -175,9 +175,9 @@
               >
                 <td>{{ article.designation }}</td>
                 <td>{{ article.quantite }}</td>
-                <td>{{ article.prix | number : "1.2-2" }} TND</td>
+                <td>{{ article.prix | number : "1.2-2" }} â‚¬</td>
                 <td>
-                  {{ article.prix * article.quantite | number : "1.2-2" }} TND
+                  {{ article.prix * article.quantite | number : "1.2-2" }} â‚¬
                 </td>
                 <td>
                   <button
@@ -195,7 +195,7 @@
           <div class="total-section">
             <strong
               >Total:
-              {{ currentCommande.montantTotal | number : "1.2-2" }} TND</strong
+              {{ currentCommande.montantTotal | number : "1.2-2" }} â‚¬</strong
             >
           </div>
         </div>

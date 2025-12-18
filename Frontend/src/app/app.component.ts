@@ -1,4 +1,4 @@
-﻿import { Component } from '@angular/core';
+import { Component } from '@angular/core';
 import { RouterOutlet, RouterLink, RouterLinkActive, Router } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { AuthService } from './services/auth.service';
@@ -9,7 +9,7 @@ import { AuthService } from './services/auth.service';
   imports: [CommonModule, RouterOutlet, RouterLink, RouterLinkActive],
   template: `
     <div class="app-container">
-      <nav class="navbar" *ngIf="authService.isAuthenticated()">
+      <nav class="navbar" *ngIf="authService.isAuthenticated() && !isAuthRoute()">
         <div class="nav-brand">
           <h1> Stock Management</h1>
         </div>
@@ -138,6 +138,11 @@ import { AuthService } from './services/auth.service';
   `]
 })
 export class AppComponent {
+  isAuthRoute(): boolean {
+    const authRoutes = ['/login', '/register'];
+    return authRoutes.includes(this.router.url);
+  }
+
   title = 'Stock Management System';
   currentUser = this.authService.getCurrentUser();
 
@@ -155,3 +160,4 @@ export class AppComponent {
     this.router.navigate(['/login']);
   }
 }
+

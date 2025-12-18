@@ -1,7 +1,11 @@
-﻿<div class="article-container">
+<div class="article-container">
   <div class="header">
     <h2>Articles Management</h2>
-    <button *ngIf="authService.isAdmin()" class="btn btn-primary" (click)="openCreateModal()">
+    <button
+      *ngIf="authService.isAdmin()"
+      class="btn btn-primary"
+      (click)="openCreateModal()"
+    >
       + Add Article
     </button>
   </div>
@@ -40,16 +44,21 @@
           <td>{{ article.designation }}</td>
           <td>{{ article.quantite }}</td>
           <td>
-            <span class="stock-badge" [ngClass]="{
-              'in-stock': article.quantite >= 10,
-              'low-stock': article.quantite > 0 && article.quantite < 10,
-              'out-of-stock': article.quantite === 0
-            }">
+            <span
+              class="stock-badge"
+              [ngClass]="{
+                'in-stock': article.quantite >= 10,
+                'low-stock': article.quantite > 0 && article.quantite < 10,
+                'out-of-stock': article.quantite === 0
+              }"
+            >
               {{ getStockStatus(article) }}
             </span>
           </td>
           <td>{{ article.prix | number : "1.2-2" }} €</td>
-          <td *ngIf="authService.isAdmin()">{{ article.prix * article.quantite | number : "1.2-2" }} €</td>
+          <td *ngIf="authService.isAdmin()">
+            {{ article.prix * article.quantite | number : "1.2-2" }} €
+          </td>
           <td *ngIf="authService.isAdmin()">
             <div class="actions">
               <button class="btn btn-warning" (click)="openEditModal(article)">
@@ -125,8 +134,3 @@
     </form>
   </div>
 </div>
-
-
-
-
-

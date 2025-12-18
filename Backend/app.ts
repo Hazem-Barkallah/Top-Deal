@@ -1,0 +1,21 @@
+﻿import express from "express";
+import cors from "cors";
+import articleRoutes from "../../../../../Downloads/ProjetWeb-main/ProjetWeb-main/Backend/src/routes/articleRoutes";
+import personnelRoutes from "../../../../../Downloads/ProjetWeb-main/ProjetWeb-main/Backend/src/routes/personnelRoutes";
+import commandeRoutes from "../../../../../Downloads/ProjetWeb-main/ProjetWeb-main/Backend/src/routes/commandeRoutes";
+import livraisonRoutes from "../../../../../Downloads/ProjetWeb-main/ProjetWeb-main/Backend/src/routes/livraisonRoutes";
+import clientRoutes from "../../../../../Downloads/ProjetWeb-main/ProjetWeb-main/Backend/src/routes/clientRoutes";
+import authRoutes from "../../../../../Downloads/ProjetWeb-main/ProjetWeb-main/Backend/src/routes/authRoutes";
+import { connectDB } from "../../../../../Downloads/ProjetWeb-main/ProjetWeb-main/Backend/src/database/index";
+
+connectDB();
+const app = express();
+app.use(cors());
+app.use(express.json());
+app.use("/auth", authRoutes);
+app.use("/articles", articleRoutes);
+app.use("/personnels", personnelRoutes);
+app.use("/commandes", commandeRoutes);
+app.use("/livraisons", livraisonRoutes);
+app.use("/clients", clientRoutes);
+export default app;

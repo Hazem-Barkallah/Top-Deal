@@ -32,7 +32,8 @@ label {
   font-weight: 500;
 }
 
-input, select {
+input,
+select {
   width: 100%;
   padding: 10px;
   border: 1px solid #ddd;
@@ -41,15 +42,16 @@ input, select {
   box-sizing: border-box;
 }
 
-input:focus, select:focus {
+input:focus,
+select:focus {
   outline: none;
-  border-color: #4CAF50;
+  border-color: #4caf50;
 }
 
 .btn-primary {
   width: 100%;
   padding: 12px;
-  background-color: #4CAF50;
+  background-color: #4caf50;
   color: white;
   border: none;
   border-radius: 4px;
@@ -78,7 +80,7 @@ input:focus, select:focus {
 }
 
 .login-link a {
-  color: #4CAF50;
+  color: #4caf50;
   text-decoration: none;
 }
 

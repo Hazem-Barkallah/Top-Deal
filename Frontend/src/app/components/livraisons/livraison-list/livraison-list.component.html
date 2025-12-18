@@ -30,7 +30,7 @@
     <table>
       <thead>
         <tr>
-          <th>Client</th>
+          <th *ngIf="authService.isAdmin()">Client</th>
           <th>Order Date</th>
           <th>Delivery Person</th>
           <th>Delivery Date</th>
@@ -41,7 +41,7 @@
       </thead>
       <tbody>
         <tr *ngFor="let livraison of filteredLivraisons">
-          <td>{{ livraison.clientName || 'N/A' }}</td>
+          <td *ngIf="authService.isAdmin()">{{ livraison.clientName || 'N/A' }}</td>
           <td>{{ livraison.commandeDate | date : "short" }}</td>
           <td>{{ livraison.deliveryPerson }}</td>
           <td>{{ livraison.deliveryDate | date : "short" }}</td>
